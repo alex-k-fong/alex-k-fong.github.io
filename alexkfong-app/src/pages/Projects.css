@@ -42,7 +42,7 @@ body {
   padding: 1.25rem;
   text-align: left;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 0.5px solid var(--border-color);
 
 
   transition:
@@ -88,7 +88,7 @@ body {
   color: var(--main-text-color);
   background-color: transparent;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 0.5px solid var(--border-color);
 
   transition:
     background-color 0.25s ease,
