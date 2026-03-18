@@ -1,4 +1,4 @@
-// import '../Skills.css';
+import './Skills.css';
 import NavBar from "../components/NavBar";
 import Footer from '../components/Footer';
 
@@ -11,7 +11,7 @@ function Skills() {
       <div className="overlay-content">
         <NavBar />
         <div className="Skills">
-
+        <h2>Skills</h2>
         </div>
         <Footer />
       </div>
