@@ -6,6 +6,8 @@ import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import purePursuitImage from "../assets/PurePursuitSimScreenshot.png";
 import asteroidsImage from "../assets/AsteroidsScreenshot.png"
+import rehypeRaw from "rehype-raw";
+import NotFoundContent from "../components/NotFoundContent";
 
 type ProjectPage = {
   slug: string;
@@ -16,7 +18,6 @@ type ProjectPage = {
 };
 
 const projectImages: Record<string, string> = {
-  "/Interactive-Kinect-Rain-Simulation": "/project-images/kinect-rain.png",
   "/Pure-Pursuit-Visualizer": purePursuitImage,
   "/Asteroids-Game": asteroidsImage,
 };
@@ -49,7 +50,7 @@ function extractPreview(raw: string) {
         !line.startsWith("[")
     );
 
-  const preview = lines[0] || "Click to read more.";
+  const preview = lines[0] || "";
 
   return preview.length > 140
     ? preview.slice(0, 140).trim() + "..."
@@ -123,8 +124,8 @@ function Projects() {
                   ))}
               </div>
             </>
-          ) : !page ? (
-            <h2>Project Not Found</h2>
+          ) : !page || !page.content.trim() ? (
+            <NotFoundContent></NotFoundContent>
           ) : (
             <div className="project-page">
               <Link to="/projects" className="back-link">
@@ -140,22 +141,10 @@ function Projects() {
               )}
 
               <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
                 components={{
                   a: ({ href, children }) => {
                     if (!href) return <>{children}</>;
-
-                    const isExternal =
-                      href.startsWith("http") ||
-                      href.startsWith("mailto:") ||
-                      href.startsWith("tel:");
-
-                    if (isExternal) {
-                      return (
-                        <a href={href} target="_blank" rel="noopener noreferrer">
-                          {children}
-                        </a>
-                      );
-                    }
 
                     return <Link to={href}>{children}</Link>;
                   },
