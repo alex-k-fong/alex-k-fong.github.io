@@ -15,7 +15,7 @@ body {
 }
 
 .Projects {
-  width: min(1100px, 92%);
+  width: min(1368px, 92%);
   margin: 0 auto;
   margin-top: var(--NavBar-height);
   padding: 3rem 0 100px;
@@ -106,27 +106,7 @@ body {
   transform: translateY(-2px);
 }
 
-.project-hero-image {
-  display: block;
-  width: 50%;
-  max-width: 600px;   /* prevents it from getting too big on large screens */
-  min-width: 220px;   /* prevents it from getting too small on mobile */
-
-  margin: 1.5rem auto;  /* centers horizontally */
-
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-.md-video {
-  display: block;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 700px;
-  border-radius: 12px;
-}
-
-.project-page {
+.project-content {
   max-width: 800px;
   line-height: normal;
   margin: 0 auto;
