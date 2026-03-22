@@ -8,7 +8,7 @@ export default function P5canvas({ sketch }: { sketch: (p: p5, colors: { stroke:
   const hostRef = useRef<HTMLDivElement>(null);
   const instanceRef = useRef<p5 | null>(null);
   const { isDarkMode } = useTheme();
-  const colors = isDarkMode ?  { stroke: "#0c5060", background: "#f0f8fb" } : { stroke: "#18bad4", background: "#0e293c" }
+  const colors = isDarkMode ?  { stroke: "#18bad4", background: "#0e293c" } :{ stroke: "#0c5060", background: "#f0f8fb" }
 
   useEffect(() => {
     if (!hostRef.current) return;

@@ -14,8 +14,8 @@ function NavBar() {
   return (
     <nav className='NavBar'>
       <div className='NavBarLeft'>
-        
-        
+
+
         <button
           className="hamburger"
           onClick={() => {
@@ -32,7 +32,7 @@ function NavBar() {
           <li><Link className='NavBarItem' to='/skills'><span>Skills</span></Link></li>
         </ul>
       </div>
-      <a id="githubIcon" href='https://github.com/alex-k-fong'><img src={isDarkMode ? githubIconBlack : githubIconWhite} width={60} height={60} alt='GitHub Logo' /></a>
+      <a id="githubIcon" href='https://github.com/alex-k-fong'><img src={isDarkMode ? githubIconWhite : githubIconBlack} width={60} height={60} alt='GitHub Logo' /></a>
 
     </nav>
   );

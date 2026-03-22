@@ -13,13 +13,14 @@ function Footer() {
       <button id="Theme" onClick={toggleTheme}>
         {isDarkMode ? (
           <>
-            <MoonIcon className="sunIcon" />
-            Dark Mode
+            <SunIcon className="moonIcon" />
+            Light Mode
+
           </>
         ) : (
           <>
-            <SunIcon className="moonIcon" />
-            Light Mode
+            <MoonIcon className="sunIcon" />
+            Dark Mode
           </>
         )}
       </button>
