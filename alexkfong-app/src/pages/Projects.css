@@ -30,6 +30,12 @@ body {
   column-gap: 1.25rem;
 }
 
+@media (max-width: 600px) {
+  .projects-grid {
+    column-count: 1;
+  }
+}
+
 .project-card {
   display: inline-block;
   width: 100%;
